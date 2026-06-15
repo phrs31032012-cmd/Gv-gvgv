@@ -42,7 +42,6 @@
             gap: 15px;
         }
 
-        /* Espaço para a Logo da sua empresa */
         .logo-empresa {
             width: 55px;
             height: 55px;
@@ -55,12 +54,6 @@
             color: white;
             font-size: 24px;
             overflow: hidden;
-        }
-
-        .logo-empresa img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .brand-name {
@@ -119,7 +112,7 @@
             margin-top: 30px;
         }
 
-        /* Cards dos Botijões */
+        /* Cards dos Produtos */
         .card {
             background: white;
             border-radius: 15px;
@@ -145,69 +138,117 @@
             letter-spacing: 1px;
         }
 
-        /* Cores das marcas */
         .ultragaz-tag { color: #0056b3; }
         .liquigas-tag { color: #777777; }
         .supergas-tag { color: #ff6600; }
-        .atendimento-tag { color: #e91e63; }
+        .agua-tag { color: #00a8ff; }
 
-        /* Desenho dos Botijões em CSS */
-        .botijao-container {
-            height: 160px;
+        /* Container do desenho do Produto */
+        .produto-container {
+            height: 180px;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-        }
-
-        .botijao {
-            width: 100px;
-            height: 120px;
-            border-radius: 40px / 30px;
             position: relative;
-            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.2);
         }
 
-        /* Alça do botijão */
-        .botijao::before {
+        /* NOVO DESIGN DETALHADO DO BOTIJÃO DE GÁS */
+        .botijao-realista {
+            width: 100px;
+            height: 110px;
+            border-radius: 35px / 25px;
+            position: relative;
+            margin-top: 15px;
+        }
+
+        /* Cores com efeito de sombra e brilho 3D */
+        .botijao-realista.azul {
+            background: linear-gradient(90deg, #0056b3 0%, #007bff 30%, #00a8ff 50%, #007bff 70%, #004085 100%);
+        }
+        .botijao-realista.prata {
+            background: linear-gradient(90deg, #71777d 0%, #b0b5b8 30%, #e9ecef 50%, #b0b5b8 70%, #495057 100%);
+        }
+        .botijao-realista.laranja {
+            background: linear-gradient(90deg, #cc5200 0%, #ff6600 30%, #ff944d 50%, #ff6600 70%, #993d00 100%);
+        }
+
+        /* Alça detalhada do topo */
+        .botijao-realista::before {
             content: '';
             position: absolute;
-            top: -15px;
+            top: -18px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 20px;
-            border: 5px solid rgba(0,0,0,0.15);
+            width: 65px;
+            height: 22px;
+            border: 6px solid rgba(0,0,0,0.25);
             border-bottom: none;
-            border-radius: 10px 10px 0 0;
+            border-radius: 12px 12px 0 0;
+            background: transparent;
         }
 
-        /* Cores corrigidas a seu pedido */
-        .botijao.azul { background-color: #007bff; } /* Ultragaz */
-        .botijao.prata { background-color: #b0b5b8; } /* Liquigás Prata */
-        .botijao.laranja { background-color: #ff6600; } /* Supergasbras Laranja */
-
-        /* Avatar da Mulher do Gás */
-        .avatar-mulher {
-            width: 110px;
-            height: 110px;
-            background-color: #fce4ec;
-            border: 4px solid #e91e63;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            margin: 0 auto 10px;
-            overflow: hidden;
-        }
-        
-        .avatar-mulher img {
+        /* Solda/Vinco do meio e gargalo do botijão */
+        .botijao-realista::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: 4px;
+            background-color: rgba(0,0,0,0.15);
+            box-shadow: 0 -25px 0 rgba(0,0,0,0.1); /* Vinco superior */
         }
 
+        /* Base do botijão */
+        .botijao-base {
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75px;
+            height: 8px;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 4px;
+        }
+
+        /* DESIGN DO GALÃO DE ÁGUA */
+        .galao-agua-realista {
+            width: 85px;
+            height: 130px;
+            background: linear-gradient(90deg, #2593d9 0%, #7cd1f9 35%, #bfe7fd 50%, #7cd1f9 70%, #177bb8 100%);
+            border-radius: 25px 25px 15px 15px;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Gargalo da água */
+        .galao-agua-realista::before {
+            content: '';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 28px;
+            height: 14px;
+            background: linear-gradient(90deg, #106396, #33a1eb, #106396);
+            border-radius: 4px 4px 0 0;
+        }
+
+        /* Frisos/Linhas clássicas de relevo do galão de 20L */
+        .galao-agua-realista::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 5%;
+            width: 90%;
+            height: 70px;
+            border-top: 4px solid rgba(255,255,255,0.4);
+            border-bottom: 4px solid rgba(255,255,255,0.4);
+            box-shadow: inset 0 20px 0 rgba(0,0,0,0.05), inset 0 -20px 0 rgba(0,0,0,0.05);
+        }
+
+        /* Botões e Textos */
         .card h3 {
             font-size: 22px;
             margin-bottom: 10px;
@@ -238,7 +279,48 @@
         .btn-ultragaz { background-color: #0056b3; }
         .btn-liquigas { background-color: #555555; }
         .btn-supergas { background-color: #ff6600; }
-        .btn-mulher { background-color: #e91e63; }
+        .btn-agua { background-color: #00a8ff; }
+
+        /* Seção do Endereço */
+        .endereco-section {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .endereco-section h2 {
+            color: #0275d8;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .endereco-texto {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .btn-mapa {
+            display: inline-block;
+            background-color: #db4437;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(219, 68, 55, 0.2);
+        }
+
+        .btn-mapa:hover {
+            background-color: #c53727;
+            transform: scale(1.03);
+        }
 
         /* Rodapé */
         footer {
@@ -250,10 +332,6 @@
             margin-top: 60px;
             border-top: 3px solid #0275d8;
         }
-        
-        footer p {
-            margin-bottom: 5px;
-        }
     </style>
 </head>
 <body>
@@ -261,18 +339,16 @@
     <header>
         <div class="nav-container">
             <div class="logo-area">
-                <div class="logo-empresa">
-                    M
-                </div>
+                <div class="logo-empresa">M</div>
                 <div class="brand-name">Moriyah GV Gás</div>
             </div>
-            <a href="https://wa.me/5500999999999" target="_blank" class="btn-topo">Pedir pelo WhatsApp</a>
+            <a href="https://wa.me/5531981043000" target="_blank" class="btn-topo">Pedir pelo WhatsApp</a>
         </div>
     </header>
 
     <section class="hero">
         <h1>Moriyah GV Gás</h1>
-        <p>A energia certa para o seu lar. Entrega rápida e segura!</p>
+        <p>Gás de cozinha das melhores marcas e Água Mineral de qualidade!</p>
     </section>
 
     <main class="produtos-section">
@@ -281,57 +357,72 @@
             <div class="card">
                 <div>
                     <div class="marca-tag ultragaz-tag">Ultragaz</div>
-                    <div class="botijao-container">
-                        <div class="botijao azul"></div>
+                    <div class="produto-container">
+                        <div class="botijao-realista azul">
+                            <div class="botijao-base"></div>
+                        </div>
                     </div>
                     <h3>Gás Ultragaz P13</h3>
                     <p>O azulzinho tradicional. Segurança, qualidade e o rendimento ideal para a sua cozinha.</p>
                 </div>
-                <a href="https://wa.me/5500999999999?text=Olá%20Moriyah%20GV%20Gás,%20quero%20pedir%20um%20gás%20Ultragaz" target="_blank" class="btn-pedir btn-ultragaz">Pedir Ultragaz</a>
+                <a href="https://wa.me/5531981043000?text=Olá%20Moriyah%20GV%20Gás,%20quero%20pedir%20um%20gás%20Ultragaz" target="_blank" class="btn-pedir btn-ultragaz">Pedir Ultragaz</a>
             </div>
 
             <div class="card">
                 <div>
                     <div class="marca-tag liquigas-tag">Liquigás</div>
-                    <div class="botijao-container">
-                        <div class="botijao prata"></div>
+                    <div class="produto-container">
+                        <div class="botijao-realista prata">
+                            <div class="botijao-base"></div>
+                        </div>
                     </div>
                     <h3>Gás Liquigás P13</h3>
                     <p>O botijão prata sinônimo de tradição e forte rendimento para o dia a dia da sua família.</p>
                 </div>
-                <a href="https://wa.me/5500999999999?text=Olá%20Moriyah%20GV%20Gás,%20quero%20pedir%20um%20gás%20Liquigás" target="_blank" class="btn-pedir btn-liquigas">Pedir Liquigás</a>
+                <a href="https://wa.me/5531981043000?text=Olá%20Moriyah%20GV%20Gás,%20quero%20pedir%20um%20gás%20Liquigás" target="_blank" class="btn-pedir btn-liquigas">Pedir Liquigás</a>
             </div>
 
             <div class="card">
                 <div>
                     <div class="marca-tag supergas-tag">Supergasbras</div>
-                    <div class="botijao-container">
-                        <div class="botijao laranja"></div>
+                    <div class="produto-container">
+                        <div class="botijao-realista laranja">
+                            <div class="botijao-base"></div>
+                        </div>
                     </div>
                     <h3>Supergasbras P13</h3>
                     <p>Sempre perto de você. O clássico botijão laranja com a máxima eficiência energética.</p>
                 </div>
-                <a href="https://wa.me/5500999999999?text=Olá%20Moriyah%20GV%20Gás,%20quero%20pedir%20um%20gás%20Supergasbras" target="_blank" class="btn-pedir btn-supergas">Pedir Supergasbras</a>
+                <a href="https://wa.me/5531981043000?text=Olá%20Moriyah%20GV%20Gás,%20quero%20pedir%20um%20gás%20Supergasbras" target="_blank" class="btn-pedir btn-supergas">Pedir Supergasbras</a>
             </div>
 
             <div class="card">
                 <div>
-                    <div class="marca-tag atendimento-tag">Atendimento Rápido</div>
-                    <div class="avatar-mulher">
-                        👩‍🍳
+                    <div class="marca-tag agua-tag">Água Mineral</div>
+                    <div class="produto-container">
+                        <div class="galao-agua-realista"></div>
                     </div>
-                    <h3>Mulher do Gás</h3>
-                    <p>Fale diretamente com a nossa atendente para tirar dúvidas ou fazer pedidos personalizados.</p>
+                    <h3>Água Ingá 20L</h3>
+                    <p>Água mineral pura e refrescante de 20 litros. Essencial para a saúde de toda a família.</p>
                 </div>
-                <a href="https://wa.me/5500999999999?text=Olá%20Moriyah%20GV%20Gás,%20gostaria%20de%20falar%20com%20a%20Mulher%20do%20Gás" target="_blank" class="btn-pedir btn-mulher">Falar com Atendente</a>
+                <a href="https://wa.me/5531981043000?text=Olá%20Moriyah%20GV%20Gás,%20quero%20pedir%20um%20galão%20de%20Água%20Ingá%20de%2020%20litros" target="_blank" class="btn-pedir btn-agua">Pedir Água Ingá</a>
             </div>
 
         </div>
     </main>
 
+    <section class="endereco-section">
+        <h2>Nossa Localização</h2>
+        <p class="endereco-texto">
+            📍 <strong>Endereço:</strong> Rua Pedra Negra, 28 - Santa Maria<br>
+            Vespasiano - MG, CEP: 33205-252
+        </p>
+        <a href="https://maps.google.com/?q=Moriyah+GV+Gás+Vespasiano" target="_blank" class="btn-mapa">🗺️ Ver no Google Maps</a>
+    </section>
+
     <footer>
         <p>&copy; 2026 Moriyah GV Gás - Todos os direitos reservados.</p>
-        <p>O melhor serviço de Disk Gás da Região.</p>
+        <p>O melhor serviço de Disk Gás e Água da Região.</p>
     </footer>
 
 </body>
